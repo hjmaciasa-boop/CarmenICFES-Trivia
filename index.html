@@ -9,7 +9,7 @@
 <body>
   <header class="hero">
     <div class="brand">
-      <img src="assets/escudo.jpg" alt="Escudo Institución Educativa El Carmen de Guasca" class="logo" />
+      <img src="./assets/escudo.jpg" onerror="this.onerror=null; this.src='./escudo.jpg';" alt="Escudo Institución Educativa El Carmen de Guasca" class="logo" />
       <div>
         <p class="eyebrow">I.E.D. El Carmen de Guasca</p>
         <h1>Reto ICFES: Sociales y Ciudadanas</h1>
@@ -86,8 +86,10 @@
     <p>Material de entrenamiento académico. Banco de preguntas basado en cuadernillos ICFES / Evaluar para Avanzar. Uso no comercial.</p>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
   <script src="firebase-config.js"></script>
   <script src="questions.js"></script>
-  <script type="module" src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
