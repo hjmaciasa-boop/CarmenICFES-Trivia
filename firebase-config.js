@@ -1,9 +1,12 @@
 window.FIREBASE_CONFIG = {
-  apiKey: "PEGA_AQUI_TU_API_KEY",
-  authDomain: "TU-PROYECTO.firebaseapp.com",
-  databaseURL: "https://TU-PROYECTO-default-rtdb.firebaseio.com",
-  projectId: "TU-PROYECTO",
-  storageBucket: "TU-PROYECTO.firebasestorage.app",
-  messagingSenderId: "PEGA_AQUI_TU_SENDER_ID",
-  appId: "PEGA_AQUI_TU_APP_ID"
+  apiKey: "AIzaSyC4T8saY4LNv1otQav20rr3iUQoFujYoPA",
+  authDomain: "carmenicfes-trivia.firebaseapp.com",
+  databaseURL: "https://carmenicfes-trivia-default-rtdb.firebaseio.com",
+  projectId: "carmenicfes-trivia",
+  storageBucket: "carmenicfes-trivia.firebasestorage.app",
+  messagingSenderId: "606850855923",
+  appId: "1:606850855923:web:e2d73627ef9e43c45b5886"
 };
+
+
+
