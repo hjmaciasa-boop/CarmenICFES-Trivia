@@ -1,0 +1,16 @@
+{
+  "rules": {
+    ".read": true,
+    "results": {
+      ".indexOn": [
+        "score",
+        "percentage",
+        "finishedAt"
+      ],
+      "$resultId": {
+        ".write": true,
+        ".validate": "newData.hasChildren(['name','course','score','total','percentage','finishedAt','details']) && newData.child('name').isString() && newData.child('name').val().length <= 80 && newData.child('course').isString() && newData.child('course').val().length <= 40 && newData.child('score').isNumber() && newData.child('score').val() >= 0 && newData.child('score').val() <= 20 && newData.child('total').val() == 20 && newData.child('percentage').isNumber() && newData.child('percentage').val() >= 0 && newData.child('percentage').val() <= 100"
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trivia ICFES Sociales y Ciudadanas | I.E.D. El Carmen de Guasca</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <img src="assets/escudo.jpg" alt="Escudo Institución Educativa El Carmen de Guasca" class="logo" />
+      <div>
+        <p class="eyebrow">I.E.D. El Carmen de Guasca</p>
+        <h1>Reto ICFES: Sociales y Ciudadanas</h1>
+        <p class="lead">Trivia de entrenamiento con 20 preguntas aleatorias, retroalimentación inmediata al finalizar y ranking visible para todos los estudiantes.</p>
+      </div>
+    </div>
+    <div class="stats-strip">
+      <span><strong id="bankSize">0</strong> preguntas en repositorio</span>
+      <span>20 preguntas por intento</span>
+      <span>Ranking en línea</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel" id="startPanel">
+      <h2>Ingresar al juego</h2>
+      <p>Escribe tu nombre y curso. No uses número de documento, correo ni datos sensibles.</p>
+      <label>Nombre del estudiante
+        <input id="playerName" maxlength="60" placeholder="Ej. Laura Pérez" autocomplete="name" />
+      </label>
+      <label>Curso o grupo
+        <input id="playerCourse" maxlength="30" placeholder="Ej. 11A" />
+      </label>
+      <button id="startBtn" class="primary">Iniciar trivia</button>
+      <p class="notice" id="firebaseStatus"></p>
+    </section>
+
+    <section class="panel hidden" id="quizPanel">
+      <div class="quiz-top">
+        <div>
+          <p class="eyebrow">Pregunta <span id="questionCounter"></span> de 20</p>
+          <progress id="progress" value="0" max="20"></progress>
+        </div>
+        <div class="score-pill">Respondidas: <span id="answeredCount">0</span>/20</div>
+      </div>
+      <article class="question-card">
+        <p class="tag" id="questionMeta"></p>
+        <h2 id="questionText"></h2>
+        <div id="options" class="options"></div>
+        <details class="source-box">
+          <summary>Ver página original del cuadernillo</summary>
+          <p>Úsala cuando la pregunta tenga imagen, caricatura, tabla o un fragmento extenso.</p>
+          <img id="pageImage" alt="Página original del cuadernillo" />
+        </details>
+      </article>
+      <div class="nav-row">
+        <button id="prevBtn" class="secondary">Anterior</button>
+        <button id="nextBtn" class="secondary">Siguiente</button>
+        <button id="finishBtn" class="primary">Finalizar intento</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="resultsPanel">
+      <h2>Resultados del intento</h2>
+      <div class="result-summary" id="resultSummary"></div>
+      <div class="nav-row">
+        <button id="newAttemptBtn" class="primary">Nuevo intento</button>
+        <button id="reviewBtn" class="secondary">Ver retroalimentación</button>
+      </div>
+      <div id="reviewList" class="review-list hidden"></div>
+    </section>
+
+    <aside class="panel leaderboard-panel">
+      <div class="leaderboard-head">
+        <h2>Ranking general</h2>
+        <button id="refreshBtn" class="small">Actualizar</button>
+      </div>
+      <p class="muted">El ranking se actualiza para todos cuando Firebase está configurado. En modo demo se guarda solo en este navegador.</p>
+      <div id="leaderboard" class="leaderboard"></div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Material de entrenamiento académico. Banco de preguntas basado en cuadernillos ICFES / Evaluar para Avanzar. Uso no comercial.</p>
+  </footer>
+
+  <script src="firebase-config.js"></script>
+  <script src="questions.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
